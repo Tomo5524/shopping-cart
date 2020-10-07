@@ -16,7 +16,9 @@ import {
 const NavBar = () => {
   return (
     <Navbar className="navbar-dark" bg="dark" expand="lg">
-      <Navbar.Brand href="/">SRST Fitness</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/">
+        SRST Fitness
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
         <Nav>
