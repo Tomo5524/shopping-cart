@@ -1,9 +1,28 @@
+* {
+  box-sizing: border-box;
+  border: 0 none;
+  list-style: none outside none;
+  margin: 0;
+  outline: 0 none;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
 body {
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
   background-image: url(./images/galaxy.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+}
+
+.radius {
+  border-radius: 10px;
 }
 
 .itmes-container {
@@ -19,6 +38,10 @@ body {
   background-size: cover;
   width: 200px;
   height: 200px;
+}
+
+.border-r {
+  border-right: 1px solid #fff;
 }
 
 /* #home:click {
