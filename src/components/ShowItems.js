@@ -19,9 +19,16 @@ function ShowItems(props) {
         className="d-block m-auto my-2"
         type="number"
         min="1"
-        max="30"
+        max="30"        
+        onChange={(e) => {
+          console.log(e.target);
+          console.log(e.target.value);
+          props.onChange(props.item, e.target.value);
+        }}
+        // update the whole array
       ></input>
-      <button className="btn btn-secondary my-2">Add to Cart</button>
+      <button className="btn btn-secondary my-2" onClick={() => {
+          props.onClick(props.item)}}>Add to Cart</button>  
     </div>
   );
 }

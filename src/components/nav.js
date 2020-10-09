@@ -15,7 +15,7 @@ import {
 
 const NavBar = () => {
   return (
-    <Navbar className="navbar-dark" bg="dark" expand="lg">
+    <Navbar className="navbar-dark my-3" bg="dark" expand="lg">
       <Navbar.Brand as={Link} to="/">
         SRST Fitness
       </Navbar.Brand>
