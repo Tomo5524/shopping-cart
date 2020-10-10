@@ -23,7 +23,7 @@ const Shop = () => {
 
   useEffect(() => {
     setItemNum(cart.length); //  get sum of amount
-    console.log(cart.length,'cart.length in useEffect')
+    console.log(cart.length, "cart.length in useEffect");
   }, [cart]);
 
   // handle add cart
@@ -34,40 +34,38 @@ const Shop = () => {
     //   0
     // );
     // console.log(sum, "sum amount");
-    if (isInCart(props)){      
+    if (isInCart(props)) {
       // check if item is already in cart or not
-      console.log('in cart /////////////')
+      console.log("in cart /////////////");
       const new_cart = cart.map((obj) => {
-      let temp = Object.assign({}, obj);
-      if (obj.id === props.id) {
-        temp.amount = props.amount;
-        // temp.bg = changed_state;
-        // console.log(temp, "temp//////");
-      }
-      return temp;      
-    });    
-    // setItemNum(new_cart.length); //  get sum of amount
-    setCart(new_cart)
-    // console.log(products, "product after updated");
+        let temp = Object.assign({}, obj);
+        if (obj.id === props.id) {
+          temp.amount = props.amount;
+          // temp.bg = changed_state;
+          // console.log(temp, "temp//////");
+        }
+        return temp;
+      });
+      // setItemNum(new_cart.length); //  get sum of amount
+      setCart(new_cart);
+      // console.log(products, "product after updated");
+    } else {
+      const updated_cart = cart.slice();
+      updated_cart.push(props);
+      setCart(updated_cart);
     }
-    else{
-      const updated_cart = cart.slice()
-      updated_cart.push(props)
-      setCart(updated_cart)
-    }    
-    console.log(cart.length,'cart.length')
+    console.log(cart.length, "cart.length");
   };
 
-  function isInCart (props) {
-    console.log(props.id,' props.id ////')
+  function isInCart(props) {
+    console.log(props.id, " props.id ////");
     for (let item of cart) {
-      if (item.id === props.id){
-        console.log('hiya')
-        return true
+      if (item.id === props.id) {
+        console.log("hiya");
+        return true;
       }
-      
-  }
-    return false
+    }
+    return false;
   }
 
   // onchange
@@ -101,42 +99,40 @@ const Shop = () => {
       // changeHandle={this.props.changeHandle}
       // changeToggle={this.props.changeToggle}
       key={item.id}
-      item={item}      
+      item={item}
       onChange={updateProducts}
       onClick={handleClick}
     />
   ));
 
   return (
-    <div className="d-flex itmes-container bg-dark radius p-3">
+    <div className="itmes-container vh-100 bg-dark radius p-3">
       {/* make it responsive */}
-      <div className="col-9 border-r">
-        {/* display items and price */}
-        <div className="d-flex flex-wrap">{items}</div>
-      </div>
-      <div className="d-flex align-items-center justify-content-center col-3">
-        <div className="d-flex flex-column">
-          <div className="d-flex align-items-center">
-            <button
-              style={{ backgroundColor: "transparent", height: 46, width: 50 }}
-            >
-              <FaShoppingCart color="white" size="3rem" />
-            </button>
-            <h4 className="px-2">{itemNum}</h4>
-          </div>
-          <Link
-            to={{
-              pathname: "/Cart",
-              // updateProducts: { updateProducts },
-              state: { products,cart },
+      <div className="d-flex pb-3 align-items-center justify-content-end">
+        <Link
+          to={{
+            pathname: "/Cart",
+            // updateProducts: { updateProducts },
+            state: { products, cart },
 
-              // products: { products },
+            // products: { products },
+          }}
+        >
+          <button
+            style={{
+              backgroundColor: "transparent",
+              height: 33,
+              width: 33,
             }}
           >
-            <button className="btn btn-dark">Check Out</button>
-          </Link>
-        </div>
+            <FaShoppingCart color="white" size="2rem" />
+          </button>
+        </Link>
+        <h4 className="ml-3">{itemNum}</h4>
       </div>
+
+      {/* display items and price */}
+      <div className="d-flex flex-wrap">{items}</div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
-import { propTypes } from "react-bootstrap/esm/Image";
 import { Link } from "react-router-dom";
-import ShowItems from "./ShowItems";
+import Table from "react-bootstrap/Table";
+// import ShowItems from "./ShowItems";
 
 const Cart = (props) => {
   console.log(props, "props in Cart");
@@ -18,13 +18,47 @@ const Cart = (props) => {
   //   />
   // ));
   return (
-    <div>
-      <h1>Cart Hiya Hiya</h1>
+    <div className="itmes-container bg-white text-dark">
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* for name */}
+          <tr>
+            {props.location.state.cart.map((item) => (
+              // console.log(item, "item in map////");
+              <th key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.amount}</td>
+                <td>{item.price}</td>
+                <td>{item.price}</td>
+                {/* <td>{getTotal}</td> */}
+              </th>
+            ))}
+          </tr>
+          {/* for quantitiey */}
+
+          {/* for total */}
+          {/* <tr>
+            {props.location.state.cart.map((item) => (
+              // console.log(item, "item in map////");
+              <th key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.price}</td>
+                <td>{item.name}</td>
+              =
+              </th>
+            ))}
+          </tr> */}
+        </tbody>
+      </Table>
       {/* display all the itmes in cart */}
-      {/* return (products.map((obj) => (
-      <h4>{obj.name}</h4>
-      <h4>{obj.amount}</h4>
-   ) ) */}
 
       {/* <div className="d-flex flex-wrap">{items}</div> */}
       <Link to="/Order">

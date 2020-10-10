@@ -44,6 +44,10 @@ body {
   border-right: 1px solid #fff;
 }
 
+.line-height {
+  line-height: 1.5;
+}
+
 /* #home:click {
   color: #fff;
 } */

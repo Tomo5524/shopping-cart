@@ -15,7 +15,7 @@ import {
 
 const NavBar = () => {
   return (
-    <Navbar className="navbar-dark my-3" bg="dark" expand="lg">
+    <Navbar className="navbar-dark py-3" bg="dark" expand="lg">
       <Navbar.Brand as={Link} to="/">
         SRST Fitness
       </Navbar.Brand>
@@ -32,13 +32,10 @@ const NavBar = () => {
           <Nav.Link as={Link} to="/shop">
             Shop
           </Nav.Link>
-          <Nav.Link as={Link} to="/cart">
-            Cart
-          </Nav.Link>
           <Nav.Link as={Link} to="/about">
             About
           </Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+          {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
               Another action
@@ -50,7 +47,7 @@ const NavBar = () => {
             <NavDropdown.Item href="#action/3.4">
               Separated link
             </NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

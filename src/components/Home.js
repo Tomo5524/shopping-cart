@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="d-flex flex-column vh-100 justify-content-center align-items-center galaxy-bg">
       {/* theme is space galaxy so add a background of space */}
-      <h1>Welcome</h1>
+      <h1 className="text-dark">Welcome</h1>
       <Link to="/shop">
         <button className="btn btn-dark">Buy Planets!!</button>
       </Link>
