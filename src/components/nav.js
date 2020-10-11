@@ -26,7 +26,7 @@ const NavBar = () => {
           {/* with this code, everytime i click a nav, page refreshes.
           solution was to add as={Link} */}
           {/* https://github.com/react-bootstrap/react-bootstrap/issues/3944 */}
-          <Nav.Link as={Link} to="/">
+          <Nav.Link as={Link} to="/shopping-cart">
             Home
           </Nav.Link>
           <Nav.Link as={Link} to="/shop">
