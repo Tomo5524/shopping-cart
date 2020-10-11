@@ -11,11 +11,11 @@ import Order from "./components/Order";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="container">
         <NavBar />
         <Switch>
-          <Route path="/shopping-cart" component={Home} />
+          <Route exact path="/shopping-cart" component={Home} />
           <Route path="/shop" component={Shop} />
           <Route path="/cart" component={Cart} />
           <Route path="/about" component={About} />
