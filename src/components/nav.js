@@ -16,7 +16,7 @@ import {
 const NavBar = () => {
   return (
     <Navbar className="navbar-dark py-3" bg="dark" expand="lg">
-      <Navbar.Brand as={Link} to="/">
+      <Navbar.Brand as={Link} to="/shopping-cart">
         SRST Fitness
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
