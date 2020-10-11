@@ -17,6 +17,27 @@ const Cart = (props) => {
   //     // onClick={props.onClick}
   //   />
   // ));
+  const getItemtotal = (amount, price) => {
+    return amount * price;
+  };
+
+  const getTotal = () =>
+    props.location.state.cart.reduce(
+      (prev, cur) => prev + cur.amount * cur.price,
+      0
+    );
+
+  const renderItems = (item) => {
+    return (
+      <tr key={item.id}>
+        <td>{item.name}</td>
+        <td>{item.amount}</td>
+        <td>{item.price}</td>
+        <td>{getItemtotal(item.amount, item.price)}</td>
+      </tr>
+    );
+  };
+
   return (
     <div className="itmes-container bg-white text-dark">
       <Table striped bordered hover>
@@ -28,41 +49,21 @@ const Cart = (props) => {
             <th>Total</th>
           </tr>
         </thead>
+        <tbody>{props.location.state.cart.map(renderItems)}</tbody>
         <tbody>
-          {/* for name */}
           <tr>
-            {props.location.state.cart.map((item) => (
-              // console.log(item, "item in map////");
-              <th key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.amount}</td>
-                <td>{item.price}</td>
-                <td>{item.price}</td>
-                {/* <td>{getTotal}</td> */}
-              </th>
-            ))}
+            <th>Total</th>
+            <th>{getTotal()}</th>
           </tr>
-          {/* for quantitiey */}
-
-          {/* for total */}
-          {/* <tr>
-            {props.location.state.cart.map((item) => (
-              // console.log(item, "item in map////");
-              <th key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-                <td>{item.name}</td>
-              =
-              </th>
-            ))}
-          </tr> */}
         </tbody>
       </Table>
       {/* display all the itmes in cart */}
 
       {/* <div className="d-flex flex-wrap">{items}</div> */}
       <Link to="/Order">
-        <button className="btn btn-dark">Place Order</button>
+        <div className="d-flex justify-content-center p-3">
+          <button className="btn btn-dark">Place Order</button>
+        </div>
       </Link>
     </div>
   );
