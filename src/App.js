@@ -11,6 +11,7 @@ import Order from "./components/Order";
 
 function App() {
   return (
+    // basename={process.env.PUBLIC_URL}  fixes route problem
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="container">
         <NavBar />
