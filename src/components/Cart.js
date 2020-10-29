@@ -4,9 +4,9 @@ import Table from "react-bootstrap/Table";
 // import ShowItems from "./ShowItems";
 
 const Cart = (props) => {
-  console.log(props, "props in Cart");
-  console.log(props.location, "props.location in Cart");
-  console.log(props.location.state.products, "props.location in Cart");
+  // console.log(props, "props in Cart");
+  // console.log(props.location, "props.location in Cart");
+  // console.log(props.location.state.products, "props.location in Cart");
   // product.products if property key and next key are the same, throws an error
   // const items = props.location.state.products.map((item) => (
   //   <ShowItems
